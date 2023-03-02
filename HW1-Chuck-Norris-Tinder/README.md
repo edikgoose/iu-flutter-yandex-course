@@ -1,16 +1,22 @@
-# hw1_chuck_norris_tinder
+# Chuck Norris Jokes Tinder
 
-A new Flutter project.
+### Simple app for showing Chuck Norris joke and some pictures.
 
-## Getting Started
+### Contains:
+* Updating jokes
+* Updating pictures
+* Page "about me"
 
-This project is a starting point for a Flutter application.
+### Using:
+* [Chuck Norris Jokes](https://api.chucknorris.io) and [Random pictures](https://source.unsplash.com) api's
+* [GetIt](https://pub.dev/packages/get_it) framework for DI
+* Custom icons
 
-A few resources to get you started if this is your first Flutter project:
+### [APK](app-release.apk)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Screenshots:
+#### Home page:
+![main_page.png](readme_pics/main_page1.png)
+![main_page.png](readme_pics/main_page2.png)
+#### About me page:
+![main_page.png](readme_pics/about_me.png)
