@@ -11,7 +11,8 @@ void main() {
 }
 
 void registerSingletons() {
-  GetIt.I.registerLazySingleton(() => HttpJokeRepository(client: http.Client()));
+  GetIt.I
+      .registerLazySingleton(() => HttpJokeRepository(client: http.Client()));
 }
 
 final _get = GetIt.I.get;

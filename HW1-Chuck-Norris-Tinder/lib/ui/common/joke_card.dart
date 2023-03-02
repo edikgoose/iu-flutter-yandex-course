@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hw1_chuck_norris_tinder/ui/common/joke_pic.dart';
 import 'package:hw1_chuck_norris_tinder/ui/common/joke_text.dart';
 
 class JokeCard extends StatefulWidget {
-  const JokeCard({super.key, required this.jokeText});
+  const JokeCard({super.key, required this.jokeText, required this.jokePic});
 
   final JokeText? jokeText;
-  
+  final JokePic? jokePic;
+
   @override
   State<StatefulWidget> createState() => _JokeCardState();
 }
@@ -23,9 +25,7 @@ class _JokeCardState extends State<JokeCard> {
           Expanded(
             flex: 6,
             child: Container(
-              padding: const EdgeInsets.all(25),
-              child: Image.asset("assets/images/croco.jpg"),
-            ),
+                padding: const EdgeInsets.all(25), child: widget.jokePic),
           ),
           Expanded(
             flex: 2,
@@ -33,12 +33,10 @@ class _JokeCardState extends State<JokeCard> {
                 color: Colors.white,
                 padding: const EdgeInsets.all(25),
                 alignment: Alignment.bottomCenter,
-                child: widget.jokeText
-            ),
+                child: widget.jokeText),
           ),
         ],
       ),
     );
   }
-
 }

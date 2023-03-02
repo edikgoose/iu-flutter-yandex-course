@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hw1_chuck_norris_tinder/ui/common/app_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
 
@@ -27,9 +26,7 @@ class AboutPage extends StatelessWidget {
                     const Text(
                       "Eduard Zaripov",
                       textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontSize: 15
-                      ),
+                      style: TextStyle(fontSize: 15),
                     ),
                     const Text(
                       "Java Backend Developer at Tinkoff",
@@ -37,26 +34,26 @@ class AboutPage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.grey,
                           fontStyle: FontStyle.italic,
-                          fontSize: 10
-                      ),
+                          fontSize: 10),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
                           onPressed: () async {
-                            await goToWebPage("https://github.com/edikgoose");
+                            await _launchURL("https://github.com/edikgoose");
                           },
                           icon: const Icon(AppIcons.github),
                         ),
                         IconButton(
                           onPressed: () async {
-                            await goToWebPage("https://www.linkedin.com/in/edikgoose/");
+                            await _launchURL(
+                                "https://www.linkedin.com/in/edikgoose/");
                           },
                           icon: const Icon(AppIcons.linkedin),
                         )
                       ],
-                    )
+                    ),
                   ],
                 ),
               )
@@ -66,12 +63,13 @@ class AboutPage extends StatelessWidget {
       ),
     );
   }
-
-  Future<void> goToWebPage(String urlString) async {
-    final Uri url = Uri.parse(urlString);
-    if (!await launchUrl(url)) {
-      throw 'Could not launch $url';
-    }
-  }
 }
 
+_launchURL(String url) async {
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri, mode: LaunchMode.inAppWebView);
+  } else {
+    throw 'Could not launch $url';
+  }
+}

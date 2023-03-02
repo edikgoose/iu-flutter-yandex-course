@@ -11,7 +11,7 @@
 ///      fonts:
 ///       - asset: fonts/MyFlutterApp.ttf
 ///
-/// 
+///
 /// * Entypo, Copyright (C) 2012 by Daniel Bruce
 ///         Author:    Daniel Bruce
 ///         License:   SIL (http://scripts.sil.org/OFL)
@@ -25,6 +25,8 @@ class AppIcons {
   static const _kFontFam = 'AppIcons';
   static const String? _kFontPkg = null;
 
-  static const IconData github = IconData(0xf300, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData linkedin = IconData(0xf318, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData github =
+      IconData(0xf300, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData linkedin =
+      IconData(0xf318, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

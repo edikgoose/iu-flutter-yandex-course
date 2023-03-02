@@ -1,5 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'joke_model.g.dart';
+
+@JsonSerializable()
 class Joke {
   final String id;
+  @JsonKey(name: "value")
   final String content;
   final String url;
 
@@ -9,11 +15,7 @@ class Joke {
     required this.url,
   });
 
-  factory Joke.fromJson(Map<String, dynamic> json) {
-    return Joke(
-      id: json['id'] as String,
-      content: json['value'] as String,
-      url: json['url'] as String,
-    );
-  }
+  factory Joke.fromJson(Map<String, dynamic> json) => _$JokeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$JokeToJson(this);
 }
