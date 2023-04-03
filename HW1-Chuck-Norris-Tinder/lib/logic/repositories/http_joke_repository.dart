@@ -1,13 +1,16 @@
 import 'dart:convert';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/joke_model.dart';
 import 'joke_repository.dart';
 
-class HttpJokeRepository implements JokeRepository {
-  HttpJokeRepository({required this.client});
+final httpJokeRepositoryProvider = Provider<HttpJokeRepository>((ref) {
+    return HttpJokeRepository();
+});
 
-  final http.Client client;
+class HttpJokeRepository implements JokeRepository {
+  final http.Client client = http.Client();
   final Uri getJokeUri = Uri.parse("https://api.chucknorris.io/jokes/random");
 
   @override
