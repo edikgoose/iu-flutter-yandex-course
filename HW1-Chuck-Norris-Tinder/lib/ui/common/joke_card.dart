@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hw1_chuck_norris_tinder/ui/common/joke_pic.dart';
 import 'package:hw1_chuck_norris_tinder/ui/common/joke_text.dart';
 
+
 class JokeCard extends StatefulWidget {
   const JokeCard({super.key, required this.jokeText, required this.jokePic});
 

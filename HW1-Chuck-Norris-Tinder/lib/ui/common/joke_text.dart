@@ -3,9 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hw1_chuck_norris_tinder/logic/repositories/http_joke_repository.dart';
 
 import '../../logic/models/joke_model.dart';
+import '../pages/joke_page.dart';
+
 
 class JokeText extends ConsumerStatefulWidget {
-  const JokeText({super.key});
+  const JokeText({super.key, required this.jokeCallback});
+  final JokeCallback jokeCallback;
+
 
   @override
   ConsumerState createState() => _JokeTextState();
@@ -21,7 +25,9 @@ class _JokeTextState extends ConsumerState<JokeText> {
         builder: (BuildContext context, AsyncSnapshot<Joke> snapshot) {
           if (snapshot.hasData) {
             Joke? joke = snapshot.data;
+            debugPrint(joke.toString());
             String content = joke?.content ?? "undefined";
+            widget.jokeCallback(joke!);
             return SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Text(
